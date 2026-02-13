@@ -1,5 +1,5 @@
-import GradingEngine from "../GradingEngine.js";
-import AbsoluteStrategy from "../strategies/criterion/AbsoluteStrategy.js";
+import GradingEngine from "../core/GradingEngine.js";
+import AbsoluteStrategy from "../core/strategies/criterion/AbsoluteStrategy.js";
 
 const scores = [78, 92, 85, 45, 50];
 
