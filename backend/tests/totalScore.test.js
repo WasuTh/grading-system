@@ -1,4 +1,4 @@
-import { calculateTotalScore } from "../src/services/totalScore.serverice.js";
+import { calculateTotalScore } from "../src/services/totalScore.service.js";
 import { course, studentScore } from "../src/data/mock.js";
 
 const total = calculateTotalScore(
