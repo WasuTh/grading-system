@@ -5,9 +5,12 @@ import {
     calculatePercentile,
     calculateTScore
 } from "./statistics.service.js";
+import { mapGrade } from "./mapGrade.service.js"
 
 export function generateGradeReport(course, studentScore) {
 
+    const gradeScale = course.gradeScale;
+    
     // คำนวณ totalScore
     const policy = course.gradingPolicy;
     const stuTotal = studentScore.map((stuScore) => ({
@@ -22,14 +25,16 @@ export function generateGradeReport(course, studentScore) {
 
     // รวมผลลัพธ์
     return stuTotal.map(student => {
-        const percentile = calculatePercentile(totalScores, student.totalScore)
-        const tScore = calculateTScore(student.totalScore, mean, stdDev)
+        const percentile = calculatePercentile(totalScores, student.totalScore);
+        const tScore = calculateTScore(student.totalScore, mean, stdDev);
+        const stuGrade = mapGrade(student.totalScore, gradeScale);
 
         const result = {
             no: student.no,
             totalScore: Number(student.totalScore.toFixed(2)),
             percentile: Number(percentile.toFixed(2)),
-            tScore: Number(tScore.toFixed(2))
+            tScore: Number(tScore.toFixed(2)),
+            grade: stuGrade
         }
         return result;
     })

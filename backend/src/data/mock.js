@@ -15,11 +15,11 @@ export const course = {
         }
     },
     gradeScale: [
-        { grade: "A", min: 80, max: 100 },
-        { grade: "B", min: 70, max: 79 },
-        { grade: "C", min: 60, max: 69 },
-        { grade: "D", min: 50, max: 59 },
-        { grade: "F", min: 0, max: 49 }
+        { grade: "A", min: 80, max: 101 },
+        { grade: "B", min: 70, max: 80 },
+        { grade: "C", min: 60, max: 70 },
+        { grade: "D", min: 50, max: 60 },
+        { grade: "F", min: 0, max: 50 }
     ]
 }
 
